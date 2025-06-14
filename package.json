@@ -1,0 +1,45 @@
+{
+  "scripts": {
+    "html-report": "cypress run --spec 'cypress/e2e/*.feature' --browser chrome --headed",
+    "test": "cypress run --browser chrome --spec 'cypress/e2e/*.feature' && cucumber-html-reporter --json-dir=cypress/cucumber-json --report-dir=./cypress/cucumber-report --report-title='Cypress Tests' --metadata='{\"App Version\":\"1.0.0\",\"Test Environment\":\"Staging\"}'",
+    "test2": "cypress run --browser chrome --spec 'cypress/e2e/*.feature' && ts-node generate-report.ts"
+  },
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^22.0.1",
+    "@cypress/webpack-preprocessor": "^6.0.4",
+    "@faker-js/faker": "^8.0.2",
+    "cucumber-html-reporter": "^6.0.0",
+    "cypress": "^14.1.0",
+    "cypress-xpath": "^2.0.1",
+    "esbuild": "^0.18.3",
+    "multiple-cucumber-html-reporter": "^3.9.2",
+    "prettier": "2.8.8",
+    "ts-loader": "^9.4.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
+    "webpack": "^5.87.0"
+  },
+  "dependencies": {
+    "cucumber-json-report-formatter": "^0.1.4",
+    "express": "^5.1.0",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "json": {
+      "enabled": true,
+      "output": "cypress/reports/cucumber-report.json"
+    },
+    "messages": {
+      "enabled": true
+    }
+  },
+  "name": "core-regression-test-cypress-master",
+  "version": "1.0.0",
+  "description": "Starting the execution of tests --> npx cypress open Report command --> npm run test2",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

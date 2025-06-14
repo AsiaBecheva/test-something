@@ -1,0 +1,12 @@
+node_modules/
+cypress/videos/
+cypress/screenshots/
+cypress/reports/
+cypress/.DS_Store
+test/
+cucumber-report.html
+cucumber-messages.ndjson
+cypress/downloads/
+.vscode/
+**/cucumber-json/*
+**/cucumber-report/*
